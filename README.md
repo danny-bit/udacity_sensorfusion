@@ -21,4 +21,4 @@ In the build/results folder there are the logged outputs of a run.
 
 ## Report and Results
 
-The writeup that explains how the rubric points were adressed can be found in the Report.pdf file.
+The writeup that explains how, the rubric points were adressed can be found in the Report.pdf file.
