@@ -15,7 +15,8 @@ To obtain the starter code, read about dependencies, please refer to the followi
 
 1. Clone this repo.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
+3. Create VS Code Solution: `cmake .. -G "Visual Studio 14 2015 Win64" -DVCPKG_TARGET_TRIPLET=x64-windows`
+4. Compile `cmake -build .`
 
 ## Run
 
