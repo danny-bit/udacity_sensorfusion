@@ -1,5 +1,9 @@
 # SFND 2D Feature Tracking
 
+<p align="center">
+  <img src="https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/84241a5b-7e0a-498c-a1d9-7793edb71ecc" alt="Sublime's custom image"/>
+</p>
+
 ![SIFT_BRISK_0000](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/84241a5b-7e0a-498c-a1d9-7793edb71ecc)
 ![SHITOMASI_SIFT_match_0009](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/38f60253-25ac-4743-8f6a-1b37a68d170d)
 
