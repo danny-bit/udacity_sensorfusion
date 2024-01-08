@@ -1,5 +1,12 @@
 # SFND 2D Feature Tracking
 
+<p align="center">
+  <img src="https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/84241a5b-7e0a-498c-a1d9-7793edb71ecc" alt="Sublime's custom image"/>
+</p>
+<p align="center">
+  <img src="https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/38f60253-25ac-4743-8f6a-1b37a68d170d" alt="Sublime's custom image"/>
+</p>
+
 This repository contains the submission for the mid-term project related to "Camera Based 2D Feature Tracking", which is part of Udacity's Sensor Fusion Nanodegree program.
 
 To obtain the starter code, read about dependencies, please refer to the following repository: https://github.com/udacity/SFND_2D_Feature_Tracking.git
@@ -22,3 +29,6 @@ In the build/results folder there are the logged outputs of a run.
 ## Report and Results
 
 The writeup that explains how, the rubric points were adressed can be found in the Report.pdf file.
+
+
+
