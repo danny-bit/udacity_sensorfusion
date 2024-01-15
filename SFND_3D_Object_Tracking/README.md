@@ -1,9 +1,6 @@
 # SFND 3D Object Tracking
 
-
 ![ttc5](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/e8a0ab9e-8020-41cc-8f40-4a0d1be87a3d)
-
-<img src="images/course_code_structure.png" width="779" height="414" />
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
