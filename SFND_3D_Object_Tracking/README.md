@@ -1,6 +1,5 @@
 # SFND 3D Object Tracking
 
-![ttc5](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/e8a0ab9e-8020-41cc-8f40-4a0d1be87a3d)
 ![overview](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/2d586c0b-4c86-44cf-9cc5-9edb37dc883a)
 
 ## Dependencies for Running Locally
