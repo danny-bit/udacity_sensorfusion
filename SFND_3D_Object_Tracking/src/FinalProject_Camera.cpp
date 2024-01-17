@@ -30,6 +30,11 @@ int main(int argc, const char *argv[])
     // data location
     string dataPath = "../";
 
+    string detectorType = argv[1];
+    string descriptorType = argv[2];
+	//string detectorType = "ORB";
+	//string descriptorType = "BRISK";
+
     // camera
     string imgBasePath = dataPath + "images/";
     string imgPrefix = "KITTI/2011_09_26/image_02/data/000000"; // left camera, color
@@ -156,8 +161,6 @@ int main(int argc, const char *argv[])
 
         // extract 2D keypoints from current image
         vector<cv::KeyPoint> keypoints; // create empty feature list for current image
-        //string detectorType = "SHITOMASI";
-        string detectorType = "SIFT";
 
         if (detectorType.compare("SHITOMASI") == 0)
         {
@@ -197,8 +200,6 @@ int main(int argc, const char *argv[])
         /* EXTRACT KEYPOINT DESCRIPTORS */
 
         cv::Mat descriptors;
-        //string descriptorType = "ORB"; // BRISK, BRIEF, ORB, FREAK, AKAZE, SIFT
-        string descriptorType = "SIFT"; // BRISK, BRIEF, ORB, FREAK, AKAZE, SIFT
         descKeypoints(currFrame->keypoints, currFrame->cameraImg, descriptors, descriptorType);
 
         // push descriptors for current frame to end of data buffer
@@ -217,6 +218,7 @@ int main(int argc, const char *argv[])
             string matcherType = "MAT_BF";        // MAT_BF, MAT_FLANN
             //string descriptorType = "DES_BINARY"; // DES_BINARY, DES_HOG
             string selectorType = "SEL_KNN";       // SEL_NN, SEL_KNN
+			//string selectorType = "SEL_NN";       // SEL_NN, SEL_KNN
 
             matchDescriptors(prevFrame->keypoints, currFrame->keypoints,
                              prevFrame->descriptors, currFrame->descriptors,

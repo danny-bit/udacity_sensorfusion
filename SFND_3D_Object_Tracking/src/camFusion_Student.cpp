@@ -143,12 +143,31 @@ void clusterKptMatchesWithROI(BoundingBox &boundingBox, std::vector<cv::KeyPoint
     // boundingBox: currFrame
     // kptMatches: matches associated with current/prev frame (trainIdx=>currFrame, queryIdx=>prevFrame)
 
+    std::vector<double> kptDist;
     for (auto match : kptMatches)
-    { // loop through kptMatches
+    { // loop through kptMatches, calcuate average distance
         cv::KeyPoint kptCurrent = kptsCurr[match.trainIdx];
+        cv::KeyPoint kptPrev = kptsPrev[match.queryIdx];
 
-        if (boundingBox.roi.contains(kptCurrent.pt))
-        { // current match is within bounding box
+        if(boundingBox.roi.contains(kptCurrent.pt))
+            kptDist.push_back(cv::norm(kptPrev.pt - kptCurrent.pt));
+    }
+
+    //double meanKptDist = std::accumulate(kptDist.begin(), kptDist.end(), 0.0) / kptDist.size();
+    size_t na = kptDist.size() * 0.9; // 10% outliers
+    std::nth_element(kptDist.begin(), kptDist.begin() + na, kptDist.end());
+    double medianKptDist = kptDist[na];
+    double distThresh = medianKptDist * 1.1;
+    cout << "distThresh: " << distThresh << endl;
+
+    for (auto match : kptMatches)
+    { // loop through kptMatches, filter for bounding box
+        cv::KeyPoint kptCurrent = kptsCurr[match.trainIdx];
+        cv::KeyPoint kptPrev = kptsPrev[match.queryIdx];
+
+        if(boundingBox.roi.contains(kptCurrent.pt) &&
+           cv::norm(kptPrev.pt - kptCurrent.pt) < distThresh)
+        {
             boundingBox.keypoints.push_back(kptCurrent);
             boundingBox.kptMatches.push_back(match);
         }
@@ -203,10 +222,17 @@ void computeTTCCamera(std::vector<cv::KeyPoint> &kptsPrev, std::vector<cv::KeyPo
     //double meanDistRatio = std::accumulate(vecDistRatios.begin(), vecDistRatios.end(), 0.0) / nRatios;
     // median
     size_t na = vecDistRatios.size() / 2;
-    std::nth_element(vecDistRatios.begin(), vecDistRatios.begin() + na, vecDistRatios.end());
-    double medianDistRatio = vecDistRatios[na];
+	if (na == 0)
+	{
+		TTC = 0.0;
+	}
+	else
+	{
+		std::nth_element(vecDistRatios.begin(), vecDistRatios.begin() + na, vecDistRatios.end());
+		double medianDistRatio = vecDistRatios[na];
 
-    TTC = (-1.0/ (1 - medianDistRatio))*dT;
+		TTC = (-1.0/ (1 - medianDistRatio))*dT;
+	}
 }
 
 
