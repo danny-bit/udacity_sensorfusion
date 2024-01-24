@@ -1,4 +1,7 @@
 #### Udacity Radar 
+
+![2024-01-24 17_58_35-Figure 7](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/dc104e36-a583-4e79-977b-d7b8771b8995)
+
 Matlab version used for implementation
 ```
 Matlab2023b
