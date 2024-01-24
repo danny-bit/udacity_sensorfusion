@@ -4,6 +4,14 @@ Matlab version used for implementation
 Matlab2023b
 ```
 
+#### FMCW Waveform Design
+With the following chirp design parameters a slope of 2.05e13 is achived:
+```
+B = c / (2*spec.range_res);
+Td_max = 2*(spec.range_max/c);
+Tchirp = 5.5*Td_max;
+slope = B/Tchirp;
+```
 #### 1D FFT FOR RANGE ESTIMATION
 ![Range](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/66dedd0b-6c64-4964-b393-19534d6f7f1b)
 
