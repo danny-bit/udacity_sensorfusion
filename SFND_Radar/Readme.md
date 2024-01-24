@@ -8,7 +8,7 @@ Matlab2023b
 ![Range](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/66dedd0b-6c64-4964-b393-19534d6f7f1b)
 
 #### CFAR2D - Implementation steps
-- The 2D CFAR approach implemented is useing cell averaging.
+- The 2D CFAR approach implemented is using cell averaging.
 For the implementation a convolution approach was used, as this can be vectorized.
 The kernel was calculated using the given training and guard cells.
 After convolution with this kernel a dynamic thershold is obtained.
