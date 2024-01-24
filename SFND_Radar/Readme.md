@@ -13,6 +13,10 @@ For the implementation a convolution approach was used, as this can be vectorize
 The kernel was calculated using the given training and guard cells.
 After convolution with this kernel a dynamic thershold is obtained.
 For thresholding an additional offset is added.
+```
+thres_dB = pow2db(conv2(db2pow(RDM_c),kernel, 'same'));
+thres_dB = thres_dB + offset_dB;
+```
 
 ![2024-01-24 17_58_35-Figure 7](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/dc104e36-a583-4e79-977b-d7b8771b8995)
 
