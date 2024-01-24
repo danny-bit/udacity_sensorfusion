@@ -14,6 +14,7 @@ slope = B/Tchirp;
 ```
 #### 1D FFT FOR RANGE ESTIMATION
 Location set to 110 m.
+
 ![Range](https://github.com/danny-bit/udacity_sensorfusion/assets/59084863/66dedd0b-6c64-4964-b393-19534d6f7f1b)
 
 #### CFAR2D - Implementation steps
